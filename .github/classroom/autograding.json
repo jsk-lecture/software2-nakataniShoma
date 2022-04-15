@@ -1,0 +1,24 @@
+{
+  "tests": [
+    {
+      "name": "0411",
+      "setup": "sudo apt install -y gauche gfortran fp-compiler default-jdk golang-go",
+      "run": "export GOCACHE=/tmp/.gocache; mkdir -p $GOCACHE; cd 0411; make",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "0418",
+      "setup": "sudo apt install -y indent sed awk",
+      "run": "cd 0418; make",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}
