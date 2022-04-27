@@ -27,17 +27,20 @@ int main (int argc, char *argv[]) {
   // https://www.gnu.org/software/libc/manual/html_node/Example-of-Getopt.html
   // を参考に ./fact-getopt -d 10 とした際にDebug変数がTRUEと成るようにしてみよ．
 
-  const char* optstring = "d:";	//optstringを定義
+  const char* optstring = "d";	//optstringを定義.
+  //option argument(optarg)を設定する必要はないので、「:」は不要
 
   opterr = 0;	//disable error log
 
-  c = getopt(argc, argv, optstring);
-  if(c == 'd'){
-    Debug = TRUE;
+  //non-option or end of argument list or error('?')までloop
+  //getoptはオプション文字がなくなると-1を返すので一般的にはwhileを使う
+  while((c = getopt(argc, argv, optstring)) != -1){
+    if(c == 'd'){
+      Debug = TRUE;
+    }
   }
 
-  optind++;
-  
+  //optindはargvが終わる位置を返す
   x = atoi(argv[optind]);
   ret = fact(x);
   printf("ret = %d\n", ret);

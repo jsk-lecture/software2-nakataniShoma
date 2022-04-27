@@ -9,7 +9,7 @@ int fact (int x) {
     #endif
     return ( x * fact (x - 1) );
   } else {
-    #ifdef
+    #ifdef DEBUG
     printf("x = %d, return 1\n", x);
     #endif
     return 1;
