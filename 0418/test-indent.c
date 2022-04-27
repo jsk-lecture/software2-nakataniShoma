@@ -1,3 +1,7 @@
+
+
+
+
 /* test0.c */
 #include <stdio.h>
 /*
@@ -14,8 +18,8 @@ int main(int argc, char *argv) {
   j = 2;
   k = test(i, j);
   if (k > 5)
-    printf(">5\n";
+    printf(">5\n");
   else
-  printf("<=5\n");
+    printf("<=5\n");
   return 0;
 }
